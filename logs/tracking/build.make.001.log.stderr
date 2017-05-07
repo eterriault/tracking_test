@@ -1,0 +1,61 @@
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp: In function ‘int main(int, char**)’:
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:8:3: error: ‘init’ is not a member of ‘ros’
+   ros::init(argc, argv, "dummy_pos_node");
+   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:10:3: error: ‘NodeHandle’ is not a member of ‘ros’
+   ros::NodeHandle n;
+   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:10:19: error: expected ‘;’ before ‘n’
+   ros::NodeHandle n;
+                   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:12:3: error: ‘Publisher’ is not a member of ‘ros’
+   ros::Publisher chatter_pub = n.advertise<geometry_msgs::Point>("dummy_pos_0", 1000);
+   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:12:18: error: expected ‘;’ before ‘chatter_pub’
+   ros::Publisher chatter_pub = n.advertise<geometry_msgs::Point>("dummy_pos_0", 1000);
+                  ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:14:22: error: variable ‘ros::Rate loop_rate’ has initializer but incomplete type
+   ros::Rate loop_rate(10);
+                      ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:17:10: error: ‘ok’ is not a member of ‘ros’
+   while (ros::ok())
+          ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:27:24: error: ‘geometry_msgs::Point’ has no member named ‘c_str’
+     ROS_INFO("%s", msg.c_str());
+                        ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:27:31: error: ‘ROS_INFO’ was not declared in this scope
+     ROS_INFO("%s", msg.c_str());
+                               ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:29:5: error: ‘chatter_pub’ was not declared in this scope
+     chatter_pub.publish(msg);
+     ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:31:5: error: ‘spinOnce’ is not a member of ‘ros’
+     ros::spinOnce();
+     ^
+make[2]: *** [CMakeFiles/dummy_pos_node.dir/dummy_pos.cpp.o] Error 1
+make[1]: *** [CMakeFiles/dummy_pos_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+In file included from /opt/ros/indigo/include/ros/ros.h:40:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:2:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp: In function ‘void subCallback(const ConstPtr&)’:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:8:34: error: ‘const struct geometry_msgs::Point_<std::allocator<void> >’ has no member named ‘data’
+   ROS_INFO("I heard: [%s]", msg->data.c_str());
+                                  ^
+/opt/ros/indigo/include/ros/console.h:342:165: note: in definition of macro ‘ROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER’
+     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, __VA_ARGS__)
+                                                                                                                                                                     ^
+/opt/ros/indigo/include/ros/console.h:375:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_AT_LOCATION’
+       ROSCONSOLE_PRINT_AT_LOCATION(__VA_ARGS__); \
+       ^
+/opt/ros/indigo/include/ros/console.h:557:35: note: in expansion of macro ‘ROS_LOG_COND’
+ #define ROS_LOG(level, name, ...) ROS_LOG_COND(true, level, name, __VA_ARGS__)
+                                   ^
+/opt/ros/indigo/include/rosconsole/macros_generated.h:110:23: note: in expansion of macro ‘ROS_LOG’
+ #define ROS_INFO(...) ROS_LOG(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+                       ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:8:3: note: in expansion of macro ‘ROS_INFO’
+   ROS_INFO("I heard: [%s]", msg->data.c_str());
+   ^
+make[2]: *** [CMakeFiles/tracking_node.dir/tracking.cpp.o] Error 1
+make[1]: *** [CMakeFiles/tracking_node.dir/all] Error 2
+make: *** [all] Error 2

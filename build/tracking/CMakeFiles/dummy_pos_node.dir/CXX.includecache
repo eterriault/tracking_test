@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp
+sstream
+-
+ros/ros.h
+/home/elikos/tracking_ws/src/tracking/ros/ros.h
+geometry_msgs/Point.h
+-
+std_msgs/Header.h
+/home/elikos/tracking_ws/src/tracking/std_msgs/Header.h
+iostream
+-
+random
+-
+

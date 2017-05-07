@@ -1,0 +1,51 @@
+[  0%] [  0%] [  0%] [  0%] Built target std_msgs_generate_messages_lisp
+Built target geometry_msgs_generate_messages_lisp
+Built target roscpp_generate_messages_cpp
+Built target roscpp_generate_messages_py
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] [  0%] Built target std_msgs_generate_messages_py
+Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] [  0%] Built target geometry_msgs_generate_messages_cpp
+Built target std_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[35m[1mScanning dependencies of target tracking_node
+[35m[1mScanning dependencies of target dummy_pos_node
+[0m[0m[ 50%] [100%] [32mBuilding CXX object CMakeFiles/tracking_node.dir/tracking.cpp.o
+[32mBuilding CXX object CMakeFiles/dummy_pos_node.dir/dummy_pos.cpp.o
+In file included from /usr/include/c++/4.8/random:35:0,
+                 from /home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:6:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:3:28: fatal error: msg/RobotPos.msg: No such file or directory
+ #include <msg/RobotPos.msg>
+                            ^
+compilation terminated.
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp: In function ‘int main(int, char**)’:
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:29:3: error: ‘default_random_engine’ is not a member of ‘std’
+   std::default_random_engine generator;
+   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:29:30: error: expected ‘;’ before ‘generator’
+   std::default_random_engine generator;
+                              ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:30:3: error: ‘uniform_real_distribution’ is not a member of ‘std’
+   std::uniform_real_distribution<double> distribution(0.0,1.0);
+   ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:30:34: error: expected primary-expression before ‘double’
+   std::uniform_real_distribution<double> distribution(0.0,1.0);
+                                  ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:30:34: error: expected ‘;’ before ‘double’
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:34:34: error: ‘generator’ was not declared in this scope
+     int rand_incr = distribution(generator);
+                                  ^
+/home/elikos/tracking_ws/src/tracking/dummy_pos.cpp:34:43: error: ‘distribution’ was not declared in this scope
+     int rand_incr = distribution(generator);
+                                           ^
+make[2]: *** [CMakeFiles/dummy_pos_node.dir/dummy_pos.cpp.o] Error 1
+make[1]: *** [CMakeFiles/dummy_pos_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/tracking_node.dir/tracking.cpp.o] Error 1
+make[1]: *** [CMakeFiles/tracking_node.dir/all] Error 2
+make: *** [all] Error 2

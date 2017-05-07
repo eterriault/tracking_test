@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/elikos/tracking_ws/devel/.private/tracking/setup.sh

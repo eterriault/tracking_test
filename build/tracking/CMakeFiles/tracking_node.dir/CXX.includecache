@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elikos/tracking_ws/src/tracking/msg/RobotPos.msg
+
+/home/elikos/tracking_ws/src/tracking/tracking.cpp
+ros/ros.h
+/home/elikos/tracking_ws/src/tracking/ros/ros.h
+msg/RobotPos.msg
+/home/elikos/tracking_ws/src/tracking/msg/RobotPos.msg
+geometry_msgs/Point.h
+-
+std_msgs/Header.h
+/home/elikos/tracking_ws/src/tracking/std_msgs/Header.h
+opencv2/highgui/highgui.hpp
+/home/elikos/tracking_ws/src/tracking/opencv2/highgui/highgui.hpp
+opencv2/video/tracking.hpp
+/home/elikos/tracking_ws/src/tracking/opencv2/video/tracking.hpp
+

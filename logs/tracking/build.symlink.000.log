@@ -1,0 +1,3 @@
+Symlinking /home/elikos/tracking_ws/devel/share/tracking/cmake/trackingConfig-version.cmake
+Symlinking /home/elikos/tracking_ws/devel/share/tracking/cmake/trackingConfig.cmake
+Symlinking /home/elikos/tracking_ws/devel/lib/pkgconfig/tracking.pc

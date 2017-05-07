@@ -1,0 +1,8 @@
+[31m[1mCMake Error[0m at /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:104 (message):
+  catkin_package() called with unused arguments: message_runtime
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:98 (_catkin_package)
+  CMakeLists.txt:98 (catkin_package)
+
+
+make: *** [cmake_check_build_system] Error 1

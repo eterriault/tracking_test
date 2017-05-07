@@ -1,0 +1,381 @@
+[  0%] [  0%] [  0%] [  0%] Built target std_msgs_generate_messages_py
+Built target rosgraph_msgs_generate_messages_lisp
+Built target geometry_msgs_generate_messages_lisp
+Built target roscpp_generate_messages_lisp
+[  0%] [  0%] [  0%] Built target roscpp_generate_messages_py
+Built target roscpp_generate_messages_cpp
+Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target tracking_node
+[0m[ 50%] [100%] Built target dummy_pos_node
+[32mBuilding CXX object CMakeFiles/tracking_node.dir/tracking.cpp.o
+In file included from /home/elikos/tracking_ws/src/tracking/tracking.cpp:3:0:
+/home/elikos/tracking_ws/src/tracking/msg/RobotPos.msg:1:1: error: ‘std_msgs’ does not name a type
+ std_msgs/Header     header
+ ^
+In file included from /home/elikos/tracking_ws/src/tracking/tracking.cpp:4:0:
+/opt/ros/indigo/include/geometry_msgs/Point.h: In function ‘std::ostream& geometry_msgs::operator<<(std::ostream&, const geometry_msgs::Point_<ContainerAllocator>&)’:
+/opt/ros/indigo/include/geometry_msgs/Point.h:69:6: error: ‘ros::message_operations’ has not been declared
+ ros::message_operations::Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, "", v);
+      ^
+/opt/ros/indigo/include/geometry_msgs/Point.h:69:79: error: expected primary-expression before ‘>’ token
+ ros::message_operations::Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, "", v);
+                                                                               ^
+/opt/ros/indigo/include/geometry_msgs/Point.h:69:80: error: ‘::stream’ has not been declared
+ ros::message_operations::Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, "", v);
+                                                                                ^
+In file included from /home/elikos/tracking_ws/src/tracking/tracking.cpp:4:0:
+/opt/ros/indigo/include/geometry_msgs/Point.h: At global scope:
+/opt/ros/indigo/include/geometry_msgs/Point.h:189:8: error: ‘Printer’ is not a class template
+ struct Printer< ::geometry_msgs::Point_<ContainerAllocator> >
+        ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:9:21: error: ‘stateSize’ was not declared in this scope
+ cv::KalmanFilter kf(stateSize, measSize);
+                     ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:9:32: error: ‘measSize’ was not declared in this scope
+ cv::KalmanFilter kf(stateSize, measSize);
+                                ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp: In function ‘int main(int, char**)’:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: error: no matching function for call to ‘cv::Mat::at(int)’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note: candidates are:
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1944:33: note: template<class _Tp> _Tp& cv::Mat::at(int)
+     template<typename _Tp> _Tp& at(int i0=0);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1944:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1945:39: note: template<class _Tp> const _Tp& cv::Mat::at(int) const
+     template<typename _Tp> const _Tp& at(int i0=0) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1945:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1947:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1947:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1948:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1948:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1950:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1, int i2);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1950:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1951:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1, int i2) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1951:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1953:33: note: template<class _Tp> _Tp& cv::Mat::at(const int*)
+     template<typename _Tp> _Tp& at(const int* idx);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1953:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1954:39: note: template<class _Tp> const _Tp& cv::Mat::at(const int*) const
+     template<typename _Tp> const _Tp& at(const int* idx) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1954:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1956:40: note: template<class _Tp, int n> _Tp& cv::Mat::at(const cv::Vec<int, n>&)
+     template<typename _Tp, int n> _Tp& at(const Vec<int, n>& idx);
+                                        ^
+/usr/include/opencv2/core/core.hpp:1956:40: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1957:46: note: template<class _Tp, int n> const _Tp& cv::Mat::at(const cv::Vec<int, n>&) const
+     template<typename _Tp, int n> const _Tp& at(const Vec<int, n>& idx) const;
+                                              ^
+/usr/include/opencv2/core/core.hpp:1957:46: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1960:33: note: template<class _Tp> _Tp& cv::Mat::at(cv::Point)
+     template<typename _Tp> _Tp& at(Point pt);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1960:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   cannot convert ‘0’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1961:39: note: template<class _Tp> const _Tp& cv::Mat::at(cv::Point) const
+     template<typename _Tp> const _Tp& at(Point pt) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1961:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:44:29: note:   cannot convert ‘0’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(0) = 1.0f;
+                             ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: error: no matching function for call to ‘cv::Mat::at(int)’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note: candidates are:
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1944:33: note: template<class _Tp> _Tp& cv::Mat::at(int)
+     template<typename _Tp> _Tp& at(int i0=0);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1944:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1945:39: note: template<class _Tp> const _Tp& cv::Mat::at(int) const
+     template<typename _Tp> const _Tp& at(int i0=0) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1945:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1947:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1947:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1948:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1948:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1950:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1, int i2);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1950:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1951:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1, int i2) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1951:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1953:33: note: template<class _Tp> _Tp& cv::Mat::at(const int*)
+     template<typename _Tp> _Tp& at(const int* idx);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1953:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   cannot convert ‘8’ (type ‘int’) to type ‘const int*’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1954:39: note: template<class _Tp> const _Tp& cv::Mat::at(const int*) const
+     template<typename _Tp> const _Tp& at(const int* idx) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1954:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   cannot convert ‘8’ (type ‘int’) to type ‘const int*’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1956:40: note: template<class _Tp, int n> _Tp& cv::Mat::at(const cv::Vec<int, n>&)
+     template<typename _Tp, int n> _Tp& at(const Vec<int, n>& idx);
+                                        ^
+/usr/include/opencv2/core/core.hpp:1956:40: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1957:46: note: template<class _Tp, int n> const _Tp& cv::Mat::at(const cv::Vec<int, n>&) const
+     template<typename _Tp, int n> const _Tp& at(const Vec<int, n>& idx) const;
+                                              ^
+/usr/include/opencv2/core/core.hpp:1957:46: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1960:33: note: template<class _Tp> _Tp& cv::Mat::at(cv::Point)
+     template<typename _Tp> _Tp& at(Point pt);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1960:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   cannot convert ‘8’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1961:39: note: template<class _Tp> const _Tp& cv::Mat::at(cv::Point) const
+     template<typename _Tp> const _Tp& at(Point pt) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1961:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:45:29: note:   cannot convert ‘8’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(8) = 1.0f;
+                             ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: error: no matching function for call to ‘cv::Mat::at(int)’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note: candidates are:
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1944:33: note: template<class _Tp> _Tp& cv::Mat::at(int)
+     template<typename _Tp> _Tp& at(int i0=0);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1944:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1945:39: note: template<class _Tp> const _Tp& cv::Mat::at(int) const
+     template<typename _Tp> const _Tp& at(int i0=0) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1945:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   couldn't deduce template parameter ‘_Tp’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1947:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1947:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1948:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1948:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   candidate expects 2 arguments, 1 provided
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1950:33: note: template<class _Tp> _Tp& cv::Mat::at(int, int, int)
+     template<typename _Tp> _Tp& at(int i0, int i1, int i2);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1950:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1951:39: note: template<class _Tp> const _Tp& cv::Mat::at(int, int, int) const
+     template<typename _Tp> const _Tp& at(int i0, int i1, int i2) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1951:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   candidate expects 3 arguments, 1 provided
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1953:33: note: template<class _Tp> _Tp& cv::Mat::at(const int*)
+     template<typename _Tp> _Tp& at(const int* idx);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1953:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   cannot convert ‘16’ (type ‘int’) to type ‘const int*’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1954:39: note: template<class _Tp> const _Tp& cv::Mat::at(const int*) const
+     template<typename _Tp> const _Tp& at(const int* idx) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1954:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   cannot convert ‘16’ (type ‘int’) to type ‘const int*’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1956:40: note: template<class _Tp, int n> _Tp& cv::Mat::at(const cv::Vec<int, n>&)
+     template<typename _Tp, int n> _Tp& at(const Vec<int, n>& idx);
+                                        ^
+/usr/include/opencv2/core/core.hpp:1956:40: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1957:46: note: template<class _Tp, int n> const _Tp& cv::Mat::at(const cv::Vec<int, n>&) const
+     template<typename _Tp, int n> const _Tp& at(const Vec<int, n>& idx) const;
+                                              ^
+/usr/include/opencv2/core/core.hpp:1957:46: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   mismatched types ‘const cv::Vec<int, n>’ and ‘int’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1960:33: note: template<class _Tp> _Tp& cv::Mat::at(cv::Point)
+     template<typename _Tp> _Tp& at(Point pt);
+                                 ^
+/usr/include/opencv2/core/core.hpp:1960:33: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   cannot convert ‘16’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+In file included from /usr/include/opencv2/highgui/highgui.hpp:46:0,
+                 from /home/elikos/tracking_ws/src/tracking/tracking.cpp:6:
+/usr/include/opencv2/core/core.hpp:1961:39: note: template<class _Tp> const _Tp& cv::Mat::at(cv::Point) const
+     template<typename _Tp> const _Tp& at(Point pt) const;
+                                       ^
+/usr/include/opencv2/core/core.hpp:1961:39: note:   template argument deduction/substitution failed:
+/home/elikos/tracking_ws/src/tracking/tracking.cpp:46:30: note:   cannot convert ‘16’ (type ‘int’) to type ‘cv::Point’
+    kf.measurementMatrix.at(16) = 1.0f;
+                              ^
+make[2]: *** [CMakeFiles/tracking_node.dir/tracking.cpp.o] Error 1
+make[1]: *** [CMakeFiles/tracking_node.dir/all] Error 2
+make: *** [all] Error 2
