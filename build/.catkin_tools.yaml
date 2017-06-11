@@ -1,6 +1,0 @@
-devel_space: /home/elikos/tracking_ws/devel
-install: false
-install_space: /home/elikos/tracking_ws/install
-profile: default
-source_space: /home/elikos/tracking_ws/src
-workspace: /home/elikos/tracking_ws

@@ -1,4 +1,0 @@
-CMake Error: Error in cmake code at
-/home/elikos/tracking_ws/src/tracking/CMakeLists.txt:45:
-Parse error.  Expected a command name, got unquoted argument with text "msg/RobotPos.msg".
-make: *** [cmake_check_build_system] Error 1
