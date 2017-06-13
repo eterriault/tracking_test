@@ -1,8 +1,14 @@
 #include "robot.h"
 #include <cmath>
 
-Robot::Robot(int id) {
+Robot::Robot()
+{
+  this->isNew = true;
+  this->incertitude = -1;
+}
+Robot::Robot(int id, uint8_t color) {
     this->id = id;
+    this->color = color;
     this->isNew = true;
     this->incertitude = -1;
 }

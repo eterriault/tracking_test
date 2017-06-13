@@ -2,6 +2,9 @@
 #include <track/TargetRobot.h>
 #include <track/TargetRobotArray.h>
 
+#define RED 0
+#define GREEN 1
+
 int main(int argc, char **argv)
 {
 
@@ -21,13 +24,15 @@ int main(int argc, char **argv)
 
         track::TargetRobot msg;
         msg.poseOrigin.pose.position = dummy.getPos();
+        msg.color = RED;
         track::TargetRobot msg2;
         msg2.poseOrigin.pose.position = dummy2.getPos();
+        msg2.color = GREEN;
 
         track::TargetRobotArray msg_arr;
         msg_arr.targets.push_back(msg);
         msg_arr.targets.push_back(msg2);
-        
+
         dummy.pub.publish(msg_arr);
 
         ros::spinOnce();
