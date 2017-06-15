@@ -26,6 +26,14 @@ public:
     void setTime(ros::Time time);
     ros::Time getTime();
 
+    void setIncertitude(double incertitude);
+    double getIncertitude();
+
+    void setSpeed(double speed);
+    double getSpeed();
+
+    double updateIncertitude(int dt);
+
     double getDistanceFrom(geometry_msgs::Point pos);
 
     bool isNew;
@@ -37,7 +45,12 @@ private:
     uint8_t id;
     uint8_t color;
     ros::Time time;
+
+    //en m
     double incertitude;
+
+    //en m/s
+    double speed:
 
 };
 

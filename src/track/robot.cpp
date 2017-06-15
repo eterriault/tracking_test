@@ -5,12 +5,14 @@ Robot::Robot()
 {
   this->isNew = true;
   this->incertitude = -1;
+  this->speed = 0.33;
 }
 Robot::Robot(int id, uint8_t color) {
     this->id = id;
     this->color = color;
     this->isNew = true;
     this->incertitude = -1;
+    this->speed = 0.33;
 }
 
 Robot::~Robot() {
@@ -38,4 +40,28 @@ void Robot::setColor(uint8_t color) {
 
 uint8_t Robot::getColor() {
     return this->color;
+}
+
+void Robot::setIncertitude(double incertitude) {
+    this->incertitude = incertitude;
+}
+
+double Robot::getIncertitude() {
+    return this->incertitude;
+}
+
+void Robot::setSpeed(double speed) {
+    this->speed = speed;
+}
+
+double Robot::getSpeed() {
+    return this->speed;
+}
+
+double Robot::updateIncertitude(int dt) {
+
+    //si dt est en nanosecondes
+    this->incertitute += (dt / pow(10, 9)) * this->speed;
+
+    return this->incertitude;
 }
