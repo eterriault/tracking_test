@@ -50,7 +50,7 @@ private:
     double incertitude;
 
     //en m/s
-    double speed:
+    double speed;
 
 };
 
