@@ -6,14 +6,16 @@
 Robot::Robot()
 {
   this->isNew = true;
-  this->incertitude = -1;
+//  this->incertitude = -1;
+  this->incertitude = 0;
   this->speed = 0.33;
 }
 Robot::Robot(int id, uint8_t color) {
     this->id = id;
     this->color = color;
     this->isNew = true;
-    this->incertitude = -1;
+    //this->incertitude = -1;
+      this->incertitude = 0;    
     this->speed = 0.33;
 }
 
@@ -82,7 +84,7 @@ double Robot::getSpeed() {
 double Robot::updateIncertitude(int dt) {
 
     //si dt est en nanosecondes
-    this->incertitude += (dt / pow(10, 9)) * this->speed;
-
+    this->incertitude += (float)(dt / pow(10, 9)) * this->speed;
+    ROS_INFO("Incertitude for %d is now %f", this->id, this->incertitude);
     return this->incertitude;
 }

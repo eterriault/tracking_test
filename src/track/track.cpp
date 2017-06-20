@@ -94,7 +94,16 @@ void subCallback(const track::TargetRobotArray::ConstPtr& msg)
   }
 }
 
+void incertitudeCallback(const ros::TimerEvent& e)
+{
+  ros::Duration diffTime =e.current_real - e.last_real;
 
+  for (int id = 0; id < NUM_ROBOTS_PER_COLOR; id++)
+  {
+    redRobots.at(id).updateIncertitude(diffTime.nsec);
+    greenRobots.at(id+NUM_ROBOTS_PER_COLOR).updateIncertitude(diffTime.nsec);
+  }
+}
 
 int main(int argc, char **argv)
 {
@@ -110,14 +119,15 @@ int main(int argc, char **argv)
     //TODO: Decider si on fait un gros vecteur ou 2 petits pour chaque couleur
     ROS_INFO("Creating robot with id: %d", NUM_ROBOTS_PER_COLOR+id);
 
-    redRobots.push_back(Robot(NUM_ROBOTS_PER_COLOR + id, GREEN));
+    greenRobots.push_back(Robot(NUM_ROBOTS_PER_COLOR + id, GREEN));
   }
 
   ros::Subscriber sub = n.subscribe("dummy_pos_0", 1000, subCallback);
 
-  //TODO: boucle infinie qui update les incertitudes de tous les robots
-  ros::spin();
 
+//Timer pour calcul de l'incertitude
+ros::Timer timer = n.createTimer(ros::Duration(0.1), incertitudeCallback);
+ros::spin();
 
   return 0;
 }
