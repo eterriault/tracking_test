@@ -55,7 +55,7 @@ int DoMatch(geometry_msgs::Pose inputPose, std::vector<Robot>& robots)
       }
     }
 
-  ROS_INFO("Updated robot: %i", robots.at(closestRobotIndex).getId());
+ // ROS_INFO("Updated robot: %i", robots.at(closestRobotIndex).getId());
 
   //eturn robotGagnant;
 
@@ -65,15 +65,16 @@ void subCallback(const track::TargetRobotArray::ConstPtr& msg)
 {
 
   for(int i = 0; i < msg->targets.size(); i++) {
-    ROS_INFO("I heard robot %d: [%f, %f]", i, msg->targets[i].poseOrigin.pose.position.x, msg->targets[i].poseOrigin.pose.position.y);
+    //ROS_INFO("I heard robot %d: [%f, %f]", i, msg->targets[i].poseOrigin.pose.position.x, msg->targets[i].poseOrigin.pose.position.y);
 
     int indexRobotGagnant = NUM_ROBOTS_PER_COLOR;
     if (msg->targets[i].color == RED)
     {
        indexRobotGagnant = DoMatch(msg->targets[i].poseOrigin.pose, redRobots);
-       ROS_INFO("Found robot: %i", greenRobots.at(indexRobotGagnant).getId());
-       greenRobots.at(indexRobotGagnant).setPos(msg->targets[i].poseOrigin);
-       greenRobots.at(indexRobotGagnant).setFcu(msg->targets[i].poseFcu);
+       //ROS_INFO("Found robot: %i", greenRobots.at(indexRobotGagnant).getId());
+       redRobots.at(indexRobotGagnant).setPos(msg->targets[i].poseOrigin);
+       redRobots.at(indexRobotGagnant).setFcu(msg->targets[i].poseFcu);
+       ROS_INFO("robot %d of orientation: [%f, %f]", i, redRobots.at(indexRobotGagnant).getOrientation().x, redRobots.at(indexRobotGagnant).getOrientation().y);
 
     }
     else if (msg->targets[i].color == GREEN)
@@ -82,6 +83,7 @@ void subCallback(const track::TargetRobotArray::ConstPtr& msg)
       ROS_INFO("Found robot: %i", greenRobots.at(indexRobotGagnant).getId());
       greenRobots.at(indexRobotGagnant).setPos(msg->targets[i].poseOrigin);
       greenRobots.at(indexRobotGagnant).setFcu(msg->targets[i].poseFcu);
+      ROS_INFO("robot %d of orientation: [%f, %f]", i, greenRobots.at(indexRobotGagnant).getOrientation().x, greenRobots.at(indexRobotGagnant).getOrientation().y);
 
     }
     else

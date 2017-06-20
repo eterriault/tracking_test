@@ -3,6 +3,9 @@
 
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/Point.h>
+#include <list>
 
 class Robot
 {
@@ -16,6 +19,9 @@ public:
 
     void setFcu(geometry_msgs::PoseStamped pose);
     geometry_msgs::PoseStamped getFcu();
+
+    void updateOrientation();
+    geometry_msgs::Vector3 getOrientation();
 
     void setColor(uint8_t color);
     uint8_t getColor();
@@ -46,11 +52,14 @@ private:
     uint8_t color;
     ros::Time time;
 
+    geometry_msgs::Vector3 orientation;
+    std::list<geometry_msgs::Point> positions;
+
     //en m
     double incertitude;
 
     //en m/s
-    double speed:
+    double speed;
 
 };
 
